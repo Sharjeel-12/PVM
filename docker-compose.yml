@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    image: muhammadsharjeel403/backendimage
+    container_name: backend
+    ports:
+      - "49428:80"  
+    networks:
+      - app-network
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    restart: unless-stopped
+
+  frontend:
+    image: muhammadsharjeel403/frontendimage
+    container_name: frontend
+    ports:
+      - "5000:80"  
+    networks:
+      - app-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge

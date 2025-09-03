@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    image: muhammadsharjeel403/backendimage:latest
+    ports:
+      - "49428:80"
+    networks:
+      - app-network
+
+  frontend:
+    image: muhammadsharjeel403/frontendimage:latest
+    ports:
+      - "5000:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge
