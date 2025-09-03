@@ -1,20 +1,6 @@
 # Project Setup Guide
 ## Folder Structure
-/PVM_Project
-│
-├── /front-end-01
-│   ├── Dockerfile
-│   ├── src/
-│   └── dist/
-│
-├── /Backend
-│   ├── Dockerfile
-│   ├── src/
-│   └── dist/
-│
-├── docker-compose.yml
-├── docker-compose.prod.yml
-└── .dockerignore
+![alt text](image.png)
 ________________________________________
 # Explanation: -
 There are two Docker files, one for the front end and the other for the backend. The services can be activated using the docker-compose.yml and docker-compose.prod.yml files. All the files are present in the repository 
